@@ -1,0 +1,58 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>login page</title>
+    <link rel="stylesheet" href="app3.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="oterDiv">
+        <div class="wcover-box">
+            <span class="anime"></span>
+            <div class="form-box">
+                <h2>Login</h2>
+
+                <div class="inp_box">
+                    <input type="text" id="user" />
+                    <label>Username</label>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="inp_box">
+                    <input type="password" id="pass" />
+                    <label>Password</label>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+
+                <button type="button" class="btn" onclick="submit()">Login</button>
+
+                <div class="loglink">
+                    <p>Give me your details to access my project</p>
+                </div>
+            </div>
+            <div class="info">
+                <h2>Welcome Here!</h2>
+                <p>Here make sucessful login to enter the main decoreted page</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function submit() {
+        event.preventDefault();
+        let user = document.getElementById("user").value;
+        let pass = document.getElementById("pass").value;
+        localStorage.setItem("user", user);
+        localStorage.setItem("pass", pass);
+        if (user.trim() == "" || pass.trim() == "") {
+            alert("Fill");
+        } else {
+            window.location.href = "http://127.0.0.1:5500/app2.html";
+        }
+    }
+</script>
+
+</html>
